@@ -10,4 +10,4 @@ RUN rm -rf /usr/src/app/node_modules/.bin /usr/src/app/node_modules/.package-loc
 
 FROM node:20-alpine
 
-COPY --from=build /usr/src/app/node_modules /usr/local/lib/node_modules
+COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
