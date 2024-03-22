@@ -11,7 +11,3 @@ RUN rm -rf /usr/src/app/node_modules/.bin /usr/src/app/node_modules/.package-loc
 FROM gcr.io/distroless/nodejs20-debian12:latest
 
 COPY --from=build /usr/src/app/node_modules /usr/local/lib/node_modules
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-
-CMD [ "node" ]
