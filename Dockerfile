@@ -6,11 +6,11 @@ COPY package*.json ./
 
 RUN npm ci --omit=dev
 
-RUN rm package*.json
+RUN rm -rf /usr/src/app/node_modules/.bin /usr/src/app/node_modules/.package-lock.json
 
-FROM node:20-alpine
+FROM gcr.io/distroless/nodejs20-debian12:latest
 
-COPY --from=build /usr/src/app /usr/src/app
+COPY --from=build /usr/src/app/node_modules /usr/local/lib/node_modules
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
