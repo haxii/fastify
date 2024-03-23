@@ -1,6 +1,6 @@
 {
   "name": "fastify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "fastify docker base image builder",
   "main": "index.js",
   "scripts": {
